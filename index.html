@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Station Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </div>
+        <h1>EV Charging Station Viewer</h1>
+    </header>
+
+    <main>
+        <div class="model-grid">
+            <div class="model-container">
+                <h2>Fast Charging Station</h2>
+                <model-viewer 
+                    src="models/fast-charger.glb"
+                    ios-src="usdz/fast-charger.usdz"
+                    alt="Fast Charging Station Model"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="70deg"
+                    camera-orbit="0deg 75deg 105%"
+                    min-camera-orbit="auto auto 50%"
+                    max-camera-orbit="auto auto 150%"
+                    interaction-prompt="auto"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                    <button slot="ar-button" class="ar-button">
+                        View in AR
+                    </button>
+                </model-viewer>
+            </div>
+            
+            <div class="model-container">
+                <h2>Wall Charging Station</h2>
+                <model-viewer 
+                    src="models/wall-charger.glb"
+                    ios-src="usdz/wall-charger.usdz"
+                    alt="Wall Charging Station Model"
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="70deg"
+                    camera-orbit="0deg 75deg 105%"
+                    min-camera-orbit="auto auto 50%"
+                    max-camera-orbit="auto auto 150%"
+                    interaction-prompt="auto"
+                    shadow-intensity="1"
+                    exposure="1"
+                    environment-image="neutral"
+                    loading="eager">
+                    <button slot="ar-button" class="ar-button">
+                        View in AR
+                    </button>
+                </model-viewer>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
