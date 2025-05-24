@@ -54,6 +54,15 @@ function init() {
   session?.requestReferenceSpace('viewer').then(refSpace => {
     session.requestHitTestSource({ space: refSpace }).then(source => {
       renderer.setAnimationLoop(() => {
+        // Add this block
+    if (model) {
+        const cameraDirection = new THREE.Vector3();
+        camera.getWorldDirection(cameraDirection);
+        model.position.copy(camera.position).add(cameraDirection.multiplyScalar(1));
+        // Optional: model.quaternion.copy(camera.quaternion);
+        model.quaternion.copy(camera.quaternion);
+
+    }
         renderer.render(scene, camera);
         if (renderer.xr.isPresenting) {
           const frame = renderer.xr.getFrame();
